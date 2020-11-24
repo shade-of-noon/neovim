@@ -8,10 +8,10 @@ describe('highlight.on_yank()', function()
   local screen
   local HL_TIMEOUT = 30
   local enable_hl_on_yank = function(args)
-    higroup = args['higroup'] or 'IncSearch'
-    timeout = args['timeout'] or 150
-    on_macro = args['on_macro'] == nil and 'true' or 'false'
-    on_visual = args['on_visual'] == nil and 'true' or 'false'
+    local higroup = args['higroup'] or 'IncSearch'
+    local timeout = args['timeout'] or 150
+    local on_macro = args['on_macro'] == nil and 'true' or 'false'
+    local on_visual = args['on_visual'] == nil and 'true' or 'false'
 
     command('au TextYankPost * '
       ..'silent! lua vim.highlight.on_yank {higroup="'..higroup
